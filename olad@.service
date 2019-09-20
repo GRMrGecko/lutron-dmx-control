@@ -1,0 +1,13 @@
+[Unit]
+Description=OLAD
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/olad -l 3
+Restart=on-failure
+RestartSec=10
+User=%I
+
+[Install]
+WantedBy=multi-user.target
